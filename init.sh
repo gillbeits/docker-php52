@@ -15,7 +15,6 @@ if [ "$1" = 'httpd' ]; then
     sed -i.bak "s/Group apache/Group ${PHP52_USER_GROUP}/" /etc/httpd/conf/httpd.conf
     service syslog start
     service crond start
-    service sendmail start
     apachectl -D FOREGROUND
 else
 	exec "$@"
