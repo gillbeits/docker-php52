@@ -24,8 +24,9 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.
 
 EXPOSE 80 443
 
-COPY init.sh /init.sh
+ENTRYPOINT ["/init.sh"]
 
+ADD init.sh /
 RUN chmod +x /init.sh
 
-CMD ["/init.sh", "httpd"]
+CMD ["httpd"]

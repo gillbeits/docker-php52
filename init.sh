@@ -13,7 +13,7 @@ if [ "$1" = 'httpd' ]; then
 
     sed -i.bak "s/User apache/User ${PHP52_USER}/" /etc/httpd/conf/httpd.conf
     sed -i.bak "s/Group apache/Group ${PHP52_USER_GROUP}/" /etc/httpd/conf/httpd.conf
-    service syslog start
+    service rsyslog start
     service crond start
     apachectl -D FOREGROUND
 else
